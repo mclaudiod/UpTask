@@ -1,0 +1,36 @@
+@use 'variables' as v;
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+body {
+    font-family: v.$main_font;
+    font-size: 1.6rem;
+    min-height: 100%;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sm-container {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}

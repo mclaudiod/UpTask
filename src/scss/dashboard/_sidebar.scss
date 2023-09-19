@@ -1,0 +1,104 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sidebar {
+    opacity: 0;
+    background-color: v.$indigo;
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 300ms;
+
+    &.show {
+        opacity: 1;
+        padding: 2rem;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(0 0 0 / .90);
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    &.hide {
+        opacity: 0;
+    }
+
+    @include m.tablet {
+        height: 100%;
+        opacity: 1;
+        padding: 2rem;
+        background-color: v.$indigo;
+    }
+
+    .sidebar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            color: v.$white;
+            margin: 0;
+            text-align: center;
+        }
+
+        img {
+            display: flex;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+
+    .sidebar-nav {
+        margin-top: 5rem;
+
+        a {
+            color: v.$white;
+            display: block;
+            padding: .7rem;
+            transition-property: background-color;
+            transition-duration: 300ms;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            text-align: center;
+
+            &:hover, &.active {
+                background-color: darken(v.$indigo, 20%);
+                border-radius: .5rem;
+            }
+
+            @include m.tablet {
+                margin-bottom: 1.5rem;
+                text-align: left;
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .log-out-mobile {
+        margin-top: 10rem;
+
+        .log-out {
+            @include m.button(v.$indigo, v.$white);
+            border-radius: .5rem;
+        }
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+}

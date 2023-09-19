@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.confirmation {
+    margin-top: 5rem;
+
+    .uptask {
+        @include m.textGradient(v.$indigo);
+    }
+
+    .actions {
+        justify-content: center;
+
+        a {
+            color: v.$indigo;
+        }
+    }
+}

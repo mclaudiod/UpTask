@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.forgot {
+    margin-top: 5rem;
+
+    .uptask {
+        @include m.textGradient(v.$pink);
+    }
+
+    input[type="submit"] {
+        @include m.button(v.$pink, v.$white);
+        border-radius: .5rem;
+    }
+
+    .actions {
+        a {
+            color: v.$pink;
+        }
+    }
+}

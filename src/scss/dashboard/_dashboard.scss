@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.dashboard {
+    background-color: v.$lightGray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    @include m.tablet {
+        display: flex;
+        height: 100vh; // vh = view port which means that is taking 100% of the monitor, in this case
+    }
+
+    .main {
+        flex: 1;
+        overflow: scroll;
+    }
+
+    .content {
+        padding: 2rem;
+        
+        .page-name {
+            font-size: 2.8rem;
+            text-align: center;
+        }
+    }
+
+    .form {
+        input:not([type="submit"]) {
+            background-color: v.$white;
+        }
+
+        input[type="submit"] {
+            @include m.button(v.$indigo, v.$white);
+            padding: 1rem;
+            font-size: 1.4rem;
+            border-radius: .5rem;
+        }
+    }
+
+    .link {
+        color: v.$indigo;
+
+        &:hover {
+            color: darken(v.$indigo, 20%);
+        }
+    }
+}

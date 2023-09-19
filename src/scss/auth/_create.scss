@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.create {
+    margin-top: 5rem;
+
+    .uptask {
+        @include m.textGradient(v.$purple);
+    }
+
+    input[type="submit"] {
+        @include m.button(v.$purple, v.$white);
+        border-radius: .5rem;
+    }
+
+    .actions {
+        a {
+            color: v.$purple;
+        }
+    }
+}

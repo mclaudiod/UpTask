@@ -1,0 +1,94 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+@media(prefers-color-scheme: dark) {
+    $darkGray: #2c2c3b;
+
+    body {
+        background-color: $darkGray;
+    }
+
+    .tagline, .form label {
+        color: v.$white;
+    }
+
+    .page-description, .form .field input, .page-name {
+        color: darken(v.$lightGray, 15%)
+    }
+
+    .form .field input, .dashboard .form input:not([type="submit"]) {
+        background-color: lighten($darkGray, 15%);
+    }
+
+    .sidebar {
+        @include m.tablet {
+            background-color: darken($darkGray, 5%);
+        }
+
+        .sidebar-nav a {
+            &.active, &:hover {
+                background-color: v.$indigo;
+            }
+        }
+    }
+
+    .mobile-bar {
+        background-color: darken($darkGray, 5%);
+    }
+
+    .bar {
+        background-color: darken($darkGray, 10%);
+
+        p {
+            color: darken(v.$lightGray, 15%)
+        }
+    }
+
+    .filters {
+        background-color: lighten($darkGray, 10%);
+
+        h2, label {
+            color: v.$white;
+        }
+
+        input[type="radio"] {
+            accent-color: v.$cyan;
+        }
+    }
+
+    .dashboard {
+        background-color: $darkGray;
+
+        .link {
+            &:hover {
+                color: lighten(v.$indigo, 20%);
+            }
+        }
+    }
+
+    .projects-list .project {
+        background-color: lighten($darkGray, 20%);
+
+        &:hover {
+            background-color: lighten($darkGray, 15%);
+        }
+    }
+
+    .tasks-list .task {
+        background-color: lighten($darkGray, 10%);
+        border: none;
+        border-radius: .5rem;
+
+        p {
+            color: v.$lightGray;
+        }
+    }
+
+    .form.new-task {
+        background-color: lighten($darkGray, 10%);
+
+        legend {
+            color: v.$lightGray;
+        }
+    }
+}
